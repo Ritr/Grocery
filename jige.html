@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            margin: 0 auto;
+            background-color: #eee;
+            height: 700px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .left,
+        .right {
+            background-color: #aaa;
+            height: 50px;
+            width: 30px;
+            display: inline-block;
+        }
+
+        .left {
+            transform: rotate(30deg);
+        }
+
+        .right {
+            transform: rotate(-30deg);
+        }
+
+        .face {
+            height: 60px;
+            width: 60px;
+            background-color: pink;
+            margin-top: -30px;
+            margin-left: 5px;
+        }
+
+        .body {
+            height: 200px;
+            width: 150px;
+            background-color: #000;
+            transform: rotateZ(5deg) rotateX(10deg);
+            display: flex;
+            justify-content: space-between;
+            padding: 0 15px;
+            /* overflow: hidden; */
+            position: relative;
+        }
+
+        .line {
+            height: 210px;
+            width: 10px;
+            margin-top: -5px;
+            background-color: #fff;
+            transform: rotateZ(5deg) rotateX(10deg);
+        }
+
+        .arm {
+            position: absolute;
+            width: 40px;
+            height: 265px;
+            background-color: #000;
+            z-index: -1;
+        }
+
+        .arm1 {
+            left: -65px;
+            top: -5px;
+            transform: rotate(30deg);
+
+        }
+
+        .arm2 {
+            right: -10px;
+            transform-origin: top left;
+            transform: rotate(-75deg);
+            top: 30px;
+            animation-duration: 1s;
+            animation-name: armRun;
+            animation-iteration-count: infinite;
+        }
+
+        .basketball {
+            background-color: coral;
+            height: 90px;
+            width: 90px;
+            border-radius: 50%;
+            position: absolute;
+            right: -200px;
+            top: 80px;
+            animation-duration: 1s;
+            animation-name: run;
+            animation-iteration-count: infinite;
+        }
+
+        .leg-container {
+            position: relative;
+        }
+
+        .hip {
+            width: 180px;
+            height: 70px;
+            background-color: #aaa;
+            margin-top: -15px;
+            transform: rotate(-5deg);
+        }
+
+        .leg-container {
+            display: flex;
+            justify-content: space-between;
+            width: 200px;
+        }
+
+        .leg {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .leg1 .leg-top {
+            width: 80px;
+            height: 150px;
+            background-color: #aaa;
+            margin-left: 15px;
+            margin-top: -5px;
+            transform: rotate(-2deg);
+        }
+
+        .leg1 .leg-bottom {
+            width: 60px;
+            height: 150px;
+            background-color: #aaa;
+            margin-left: 15px;
+            margin-top: -15px;
+            transform: rotate(15deg);
+        }
+
+        .leg2 .leg-top {
+            width: 80px;
+            height: 150px;
+            background-color: #aaa;
+            margin-top: -15px;
+            transform: rotate(-15deg);
+            margin-left: 30px;
+        }
+
+        .leg2 .leg-bottom {
+            width: 60px;
+            height: 150px;
+            background-color: #aaa;
+            margin-left: 65px;
+            margin-top: -15px;
+            transform: rotate(2deg);
+        }
+
+        @keyframes run {
+            0% {
+                top: 80px;
+            }
+
+            50% {
+                top: 420px;
+            }
+            100%{
+                top: 80px;
+            }
+        }
+
+        @keyframes armRun {
+            0% {
+                transform: rotate(-75deg);
+            }
+
+            50% {
+                transform: rotate(-50deg);
+            }
+            100%{
+                transform: rotate(-75deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="head">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="face"></div>
+        </div>
+        <div class="body">
+            <div class="line line1"></div>
+            <div class="line line2"></div>
+            <div class="arm arm1"></div>
+            <div class="arm arm2">
+            </div>
+            <div class="basketball"></div>
+        </div>
+        <div class="hip">
+
+        </div>
+        <div class="leg-container">
+            <div class="leg leg1">
+                <div class="leg-top"></div>
+                <div class="leg-bottom"></div>
+            </div>
+            <div class="leg leg2">
+                <div class="leg-top"></div>
+                <div class="leg-bottom"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
